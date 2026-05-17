@@ -42,7 +42,7 @@ public class AuthService {
         var userDetails = userDetailsService.loadUserByUsername(req.email());
         String token   = jwtUtil.generateToken(userDetails);
 
-        return new JwtResponse(token, req.email(), user.getRoles().iterator().next().name());
+        return new JwtResponse(token, req.email(), user.getRoles().iterator().next().name(), null, null, null);
     }
 
     // -------------------------------------------------------------------
@@ -58,6 +58,6 @@ public class AuthService {
         String token    = jwtUtil.generateToken(userDetails);
 
         var user = userRepository.findByEmail(req.email()).orElseThrow();
-        return new JwtResponse(token, req.email(), user.getRoles().iterator().next().name());
+        return new JwtResponse(token, req.email(), user.getRoles().iterator().next().name(), user.getNombre(), user.getApellido(), user.getFotoPerfil());
     }
 }

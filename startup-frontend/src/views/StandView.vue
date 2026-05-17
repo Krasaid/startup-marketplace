@@ -241,14 +241,14 @@ async function compartir() {
 .hero-logo {
   width: 80px; height: 80px;
   border-radius: 50%;
-  border: 3px solid rgba(255,255,255,0.9);
+  border: 3px solid var(--color-card);
   overflow: hidden;
-  background: #788A70;
+  background: var(--color-deep);
   flex-shrink: 0;
   display: flex; align-items: center; justify-content: center;
 }
 .hero-logo img { width: 100%; height: 100%; object-fit: cover; }
-.logo-inicial  { font-size: 2rem; font-weight: 700; color: #fff; }
+.logo-inicial  { font-size: 2rem; font-weight: 700; color: var(--color-text); }
 
 .hero-info     { flex: 1; }
 .hero-categoria {
@@ -256,7 +256,7 @@ async function compartir() {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: .1em;
-  color: #C3DA8C;
+  color: var(--color-secondary);
   display: block;
   margin-bottom: 4px;
 }
@@ -272,8 +272,8 @@ async function compartir() {
   padding: 0.6rem 1rem;
   backdrop-filter: blur(8px);
 }
-.hero-score i    { color: #fbbf24; font-size: 1.25rem; }
-.hero-score span { font-size: 1.4rem; font-weight: 700; color: #fff; }
+.hero-score i    { color: var(--color-accent); font-size: 1.25rem; }
+.hero-score span { font-size: 1.4rem; font-weight: 700; color: var(--color-text); }
 .hero-score small { font-size: 0.7rem; color: rgba(255,255,255,.7); }
 
 /* ── LAYOUT ──────────────────────────────────────────────────────── */
@@ -291,33 +291,33 @@ async function compartir() {
 
 /* ── SECCIONES ───────────────────────────────────────────────────── */
 .seccion {
-  background: #fff;
+  background: var(--color-card);
   border-radius: 14px;
   padding: 1.5rem;
   margin-bottom: 1.25rem;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.2);
 }
 .seccion-titulo {
   font-size: 1rem;
   font-weight: 700;
-  color: #2A4526;
+  color: var(--color-text);
   margin-bottom: 1rem;
   display: flex;
   align-items: center;
   gap: 0.5rem;
 }
-.seccion-titulo i { color: #788A70; }
+.seccion-titulo i { color: var(--color-primary); }
 .badge {
   font-size: 0.72rem;
-  background: #e8f2e6;
-  color: #788A70;
+  background: var(--color-deep);
+  color: var(--color-text);
   padding: 2px 8px;
   border-radius: 99px;
   font-weight: 600;
 }
 
 .historia-texto {
-  color: #444;
+  color: var(--color-muted);
   line-height: 1.85;
   font-size: 0.95rem;
 }
@@ -331,13 +331,13 @@ async function compartir() {
 .producto-card {
   border-radius: 10px;
   overflow: hidden;
-  border: 1px solid #BDDDBB;
-  background: #fff;
+  border: 1px solid var(--color-border);
+  background: var(--color-card);
   transition: transform .2s, box-shadow .2s;
 }
 .producto-card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(108,99,255,0.12);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.5);
 }
 .producto-card.opaco { opacity: 0.55; }
 
@@ -352,30 +352,30 @@ async function compartir() {
 .producto-info  { padding: 0.75rem; }
 .producto-nombre { font-weight: 600; font-size: 0.875rem; display: block; }
 .producto-desc  {
-  font-size: 0.78rem; color: #888;
+  font-size: 0.78rem; color: var(--color-muted);
   display: block; margin-top: 2px;
   white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
 }
 .producto-precio {
   display: block;
   font-size: 1rem; font-weight: 700;
-  color: #788A70; margin-top: 6px;
+  color: var(--color-accent); margin-top: 6px;
 }
 
 .agotados-toggle {
   text-align: center;
   font-size: 0.82rem;
-  color: #aaa;
+  color: var(--color-muted);
   cursor: pointer;
   padding: 0.75rem;
   margin-top: 0.5rem;
   display: flex; align-items: center;
   justify-content: center; gap: 6px;
 }
-.agotados-toggle:hover { color: #788A70; }
+.agotados-toggle:hover { color: var(--color-primary); }
 
 .sin-productos {
-  text-align: center; color: #bbb;
+  text-align: center; color: var(--color-muted);
   display: flex; flex-direction: column;
   align-items: center; gap: 0.5rem;
   padding: 2rem;
@@ -386,14 +386,14 @@ async function compartir() {
 .col-aside { position: sticky; top: 80px; }
 
 .contacto-card {
-  background: #fff;
+  background: var(--color-card);
   border-radius: 14px;
   padding: 1.5rem;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.2);
   margin-bottom: 1rem;
 }
 .contacto-card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 4px; }
-.contacto-card p  { font-size: 0.85rem; color: #888; margin-bottom: 1.25rem; }
+.contacto-card p  { font-size: 0.85rem; color: var(--color-muted); margin-bottom: 1.25rem; }
 
 .contacto-btns { display: flex; flex-direction: column; gap: 0.75rem; }
 
@@ -408,42 +408,42 @@ async function compartir() {
 .btn-contacto:hover { opacity: .88; transform: translateY(-1px); }
 .btn-contacto i { font-size: 1.1rem; }
 
-.btn-whatsapp  { background: #25d366; color: #fff; }
+.btn-whatsapp  { background: var(--color-primary); color: #fff; }
 .btn-instagram {
-  background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+  background: linear-gradient(135deg, var(--color-secondary), var(--color-deep));
   color: #fff;
 }
 
-.sin-contacto  { text-align: center; color: #bbb; font-size: 0.85rem; }
+.sin-contacto  { text-align: center; color: var(--color-muted); font-size: 0.85rem; }
 
 .contacto-hint {
   margin-top: 1rem;
   font-size: 0.75rem;
-  color: #bbb;
+  color: var(--color-muted);
   text-align: center;
   display: flex; align-items: center;
   justify-content: center; gap: 4px;
 }
 
 .compartir-card {
-  background: #fff;
+  background: var(--color-card);
   border-radius: 14px;
   padding: 1.25rem;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.2);
   text-align: center;
 }
-.compartir-card h4 { font-size: 0.875rem; font-weight: 600; margin-bottom: 0.75rem; color: #555; }
+.compartir-card h4 { font-size: 0.875rem; font-weight: 600; margin-bottom: 0.75rem; color: var(--color-text); }
 .btn-compartir {
   display: flex; align-items: center;
   justify-content: center; gap: 6px;
   width: 100%; padding: 0.7rem;
-  background: #f4f8f3; color: #788A70;
-  border: 1px solid #BDDDBB;
+  background: var(--color-background); color: var(--color-primary);
+  border: 1px solid var(--color-border);
   border-radius: 8px; cursor: pointer;
   font-size: 0.875rem; font-weight: 600;
   transition: background .15s;
 }
-.btn-compartir:hover { background: #e8f2e6; }
+.btn-compartir:hover { background: var(--color-card); }
 
 /* ── ESTADOS ─────────────────────────────────────────────────────── */
 .loading-page .loading-body {
@@ -456,5 +456,5 @@ async function compartir() {
   align-items: center; gap: 1rem;
 }
 .no-encontrado h2 { font-size: 1.5rem; font-weight: 700; }
-.no-encontrado p  { color: #888; }
+.no-encontrado p  { color: var(--color-muted); }
 </style>

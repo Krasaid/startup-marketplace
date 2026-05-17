@@ -483,8 +483,8 @@ async function guardarEdicion(index) {
 .mi-stand-page { max-width: 1100px; margin: 0 auto; }
 
 .page-header        { margin-bottom: 1.5rem; }
-.page-header h1     { font-size: 1.75rem; font-weight: 700; color: #2A4526; }
-.page-header p      { color: #888; margin-top: 0.25rem; }
+.page-header h1     { font-size: 1.75rem; font-weight: 700; color: var(--color-text); }
+.page-header p      { color: var(--color-muted); margin-top: 0.25rem; }
 
 .layout {
   display: grid;
@@ -499,38 +499,38 @@ async function guardarEdicion(index) {
 
 .form         { display: flex; flex-direction: column; gap: 1rem; }
 .field        { display: flex; flex-direction: column; gap: 0.35rem; }
-.field label  { font-weight: 500; font-size: 0.875rem; color: #333; }
+.field label  { font-weight: 500; font-size: 0.875rem; color: var(--color-text); }
 .field-row    { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-.hint         { color: #aaa; font-size: 0.78rem; }
+.hint         { color: var(--color-muted); font-size: 0.78rem; }
 .w-full       { width: 100%; }
 
 .metricas-card  { margin-top: 1.5rem; }
 .metricas       { display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem; }
 .metrica        { text-align: center; }
-.metrica-n      { display: block; font-size: 2rem; font-weight: 700; color: #2A4526; }
-.metrica-l      { font-size: 0.8rem; color: #888; }
-.metrica.destacada .metrica-n { color: #788A70; }
+.metrica-n      { display: block; font-size: 2rem; font-weight: 700; color: var(--color-text); }
+.metrica-l      { font-size: 0.8rem; color: var(--color-muted); }
+.metrica.destacada .metrica-n { color: var(--color-accent); }
 
 .productos-count {
   font-size: 0.8rem;
   font-weight: 400;
-  color: #aaa;
+  color: var(--color-muted);
   margin-left: 0.5rem;
 }
 
 .nuevo-producto   { margin-bottom: 1.5rem; }
 .nuevo-producto h4,
 .lista-productos h4 { font-size: 0.95rem; font-weight: 600;
-                       margin-bottom: 0.75rem; color: #555; }
+                       margin-bottom: 0.75rem; color: var(--color-text); }
 
-.lista-productos  { border-top: 1px solid #BDDDBB; padding-top: 1rem; }
+.lista-productos  { border-top: 1px solid var(--color-border); padding-top: 1rem; }
 
 .producto-item {
   display: flex;
   align-items: center;
   gap: 0.75rem;
   padding: 0.6rem 0;
-  border-bottom: 1px solid #f5f5f5;
+  border-bottom: 1px solid var(--color-border);
 }
 .producto-item img {
   width: 48px; height: 48px;
@@ -540,11 +540,11 @@ async function guardarEdicion(index) {
 }
 .producto-info  { flex: 1; display: flex; flex-direction: column; gap: 3px; }
 .producto-nombre { font-weight: 600; font-size: 0.9rem; }
-.producto-precio { font-size: 0.85rem; color: #788A70; font-weight: 600; }
+.producto-precio { font-size: 0.85rem; color: var(--color-accent); font-weight: 600; }
 
 .empty-productos, .no-productos {
   text-align: center;
-  color: #aaa;
+  color: var(--color-muted);
   padding: 2rem 0;
   display: flex;
   flex-direction: column;
@@ -567,9 +567,9 @@ async function guardarEdicion(index) {
   flex-direction: column;
   gap: 0.75rem;
   padding: 0.75rem;
-  background: #f4f8f3;
+  background: var(--color-card);
   border-radius: 10px;
-  border: 1.5px solid #BDDDBB;
+  border: 1.5px solid var(--color-border);
 }
 
 .edicion-fila {

@@ -46,6 +46,9 @@ public class AuthDtos {
     public record JwtResponse(
             String token,
             String email,
-            String rol
+            String rol,
+            String nombre,
+            String apellido,
+            String fotoPerfil
     ) {}
 }

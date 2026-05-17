@@ -46,6 +46,14 @@
       <div class="nav-actions">
         <template v-if="auth.isAuthenticated">
           <span class="nav-email">{{ auth.user.email }}</span>
+          <RouterLink to="/perfil" class="nav-avatar" title="Mi perfil">
+              <img v-if="auth.user.fotoPerfil" 
+                   :src="auth.user.fotoPerfil" 
+                   :alt="auth.user.nombre || auth.user.email" />
+              <span v-else class="nav-inicial">
+                  {{ (auth.user.nombre || auth.user.email).charAt(0).toUpperCase() }}
+              </span>
+          </RouterLink>
           <Button label="Salir" severity="secondary" size="small"
                   @click="handleLogout" />
         </template>
@@ -114,8 +122,8 @@ body {
   gap: 1rem;
   padding: 0 1.5rem;
   height: 60px;
-  background: #fff;
-  border-bottom: 1px solid #BDDDBB;
+  background: var(--color-background);
+  border-bottom: 1px solid var(--color-border);
   position: sticky;
   top: 0;
   z-index: 100;
@@ -124,7 +132,7 @@ body {
 .brand {
   font-size: 1.2rem;
   font-weight: 700;
-  color: #2A4526;
+  color: var(--color-text);
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -146,8 +154,8 @@ body {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  background: #f4f8f3;
-  border: 1.5px solid #BDDDBB;
+  background: var(--color-card);
+  border: 1.5px solid var(--color-border);
   border-radius: 99px;
   padding: 0.4rem 0.9rem;
   transition: border-color .2s;
@@ -155,21 +163,21 @@ body {
   flex-shrink: 0;
 }
 .nav-search-bar:focus-within {
-  border-color: #788A70;
-  background: #fff;
+  border-color: var(--color-deep);
+  background: var(--color-card);
 }
-.nav-search-bar i    { color: #788A70; font-size: 0.9rem; flex-shrink: 0; }
+.nav-search-bar i    { color: var(--color-primary); font-size: 0.9rem; flex-shrink: 0; }
 .nav-search-bar input {
   border: none; outline: none;
   font-size: 0.875rem; background: transparent;
-  color: #2A4526; width: 100%;
+  color: var(--color-text); width: 100%;
 }
 .nav-clear {
   background: none; border: none;
-  cursor: pointer; color: #bbb; padding: 0;
+  cursor: pointer; color: var(--color-muted); padding: 0;
   display: flex; align-items: center; flex-shrink: 0;
 }
-.nav-clear:hover { color: #788A70; }
+.nav-clear:hover { color: var(--color-primary); }
 
 .nav-chips {
   display: flex;
@@ -184,18 +192,18 @@ body {
 .nav-chip {
   padding: 0.3rem 0.8rem;
   border-radius: 99px;
-  border: 1.5px solid #BDDDBB;
-  background: #fff;
+  border: 1.5px solid var(--color-border);
+  background: var(--color-card);
   font-size: 0.78rem; font-weight: 500;
-  color: #666; cursor: pointer;
+  color: var(--color-muted); cursor: pointer;
   transition: all .15s;
   white-space: nowrap;
   flex-shrink: 0;
 }
-.nav-chip:hover  { border-color: #788A70; color: #788A70; }
+.nav-chip:hover  { border-color: var(--color-deep); color: var(--color-text); }
 .nav-chip.activo {
-  background: #788A70; border-color: #788A70;
-  color: #fff; font-weight: 600;
+  background: var(--color-deep); border-color: var(--color-deep);
+  color: var(--color-text); font-weight: 600;
 }
 
 /* ── LINKS Y ACCIONES ───────────────────────────────────────────── */
@@ -203,15 +211,29 @@ body {
 
 .nav-link {
   text-decoration: none;
-  color: #555;
+  color: var(--color-muted);
   font-size: 0.9rem;
   font-weight: 500;
   white-space: nowrap;
 }
-.nav-link:hover, .router-link-active { color: #788A70; }
+.nav-link:hover, .router-link-active { color: var(--color-primary); }
 
 .nav-actions { display: flex; align-items: center; gap: 0.6rem; flex-shrink: 0; }
-.nav-email   { font-size: 0.8rem; color: #888; white-space: nowrap; }
+.nav-email   { font-size: 0.8rem; color: var(--color-muted); white-space: nowrap; }
+
+.nav-avatar {
+  width: 34px; height: 34px;
+  border-radius: 50%;
+  border: 2px solid var(--color-primary);
+  overflow: hidden;
+  background: var(--color-deep);
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; text-decoration: none;
+  transition: opacity .15s;
+}
+.nav-avatar:hover { opacity: .85; }
+.nav-avatar img   { width: 100%; height: 100%; object-fit: cover; }
+.nav-inicial      { font-size: .85rem; font-weight: 700; color: var(--color-text); }
 
 .main-content { flex: 1; padding: 2rem; max-width: 1200px;
                 margin: 0 auto; width: 100%; }

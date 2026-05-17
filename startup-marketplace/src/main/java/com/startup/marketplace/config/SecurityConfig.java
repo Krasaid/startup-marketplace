@@ -72,6 +72,9 @@ public class SecurityConfig {
                 .requestMatchers(HttpMethod.DELETE, "/api/stands/**")
                     .hasAnyRole("EMPRENDEDOR", "ADMIN")
 
+                // Perfil del usuario autenticado
+                .requestMatchers("/api/profile/**").authenticated()
+
                 // Todo lo demas requiere autenticacion
                 .anyRequest().authenticated()
             )

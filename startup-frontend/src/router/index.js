@@ -25,6 +25,12 @@ const routes = [
     meta: { guestOnly: true }
   },
   {
+    path: '/perfil',
+    name: 'perfil',
+    component: () => import('../views/PerfilView.vue'),
+    meta: { requiresAuth: true }
+  },
+  {
     path: '/mi-stand',
     name: 'mi-stand',
     component: () => import('../views/MiStandView.vue'),

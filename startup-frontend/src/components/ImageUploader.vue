@@ -111,9 +111,9 @@ function quitar() {
 .uploader { width: 100%; }
 
 .drop-zone {
-  border: 2px dashed #BDDDBB;
+  border: 2px dashed var(--color-border);
   border-radius: 10px;
-  background: #f4f8f3;
+  background: var(--color-card);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -121,8 +121,8 @@ function quitar() {
   transition: border-color 0.2s, background 0.2s;
 }
 .drop-zone:hover, .drop-zone.dragging {
-  border-color: #788A70;
-  background: #e8f2e6;
+  border-color: var(--color-primary);
+  background: var(--color-deep);
 }
 .drop-zone.is-banner { height: 140px; width: 100%; }
 .drop-zone.is-logo   { height: 100px; width: 100px; border-radius: 50%; }
@@ -132,12 +132,12 @@ function quitar() {
   flex-direction: column;
   align-items: center;
   gap: 6px;
-  color: #A9CFA1;
+  color: var(--color-muted);
   pointer-events: none;
 }
 .upload-state i    { font-size: 1.75rem; }
-.upload-state span { font-size: 0.875rem; font-weight: 500; color: #788A70; }
-.upload-state small { font-size: 0.75rem; color: #bbb; }
+.upload-state span { font-size: 0.875rem; font-weight: 500; color: var(--color-text); }
+.upload-state small { font-size: 0.75rem; color: var(--color-muted); }
 
 .preview {
   position: relative;

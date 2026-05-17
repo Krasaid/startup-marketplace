@@ -82,6 +82,6 @@ async function handleRegistro() {
 .field label { font-weight: 500; font-size: 0.9rem; }
 .w-full     { width: 100%; }
 .rol-toggle { display: flex; }
-.switch-link { text-align: center; font-size: 0.9rem; color: #888; }
-.switch-link a { color: #788A70; font-weight: 600; }
+.switch-link { text-align: center; font-size: 0.9rem; color: var(--color-muted); }
+.switch-link a { color: var(--color-primary); font-weight: 600; }
 </style>

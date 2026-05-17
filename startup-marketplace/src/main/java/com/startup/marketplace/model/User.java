@@ -29,6 +29,10 @@ public class User {
 
     private Set<Role> roles;
 
+    private String nombre;
+    private String apellido;
+    private String fotoPerfil;
+
     private boolean activo = true;
 
     private Instant createdAt = Instant.now();

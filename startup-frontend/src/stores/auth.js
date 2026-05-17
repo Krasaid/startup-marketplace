@@ -30,13 +30,24 @@ export const useAuthStore = defineStore('auth', () => {
 
     function _setSession(data) {
         token.value = data.token
-        user.value = { email: data.email, rol: data.rol }
+        user.value  = { 
+            email:      data.email, 
+            rol:        data.rol,
+            nombre:     data.nombre     || null,
+            apellido:   data.apellido   || null,
+            fotoPerfil: data.fotoPerfil || null
+        }
         localStorage.setItem('token', data.token)
+        localStorage.setItem('user', JSON.stringify(user.value))
+    }
+
+    function updateUser(profileData) {
+        user.value = { ...user.value, ...profileData }
         localStorage.setItem('user', JSON.stringify(user.value))
     }
 
     return {
         token, user, isAuthenticated, isEmprendedor, isAdmin,
-        login, register, logout
+        login, register, logout, updateUser
     }
 })

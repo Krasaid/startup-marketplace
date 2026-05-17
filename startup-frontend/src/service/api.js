@@ -67,6 +67,14 @@ export const uploadApi = {
     }
 }
 
+// ── Perfil ───────────────────────────────────────────────────────────
+export const profileApi = {
+    get:            ()       => request('GET',    '/profile'),
+    update:         (data)   => request('PUT',    '/profile', data),
+    changePassword: (data)   => request('PATCH',  '/profile/password', data),
+    delete:         ()       => request('DELETE', '/profile')
+}
+
 // ── Auth ─────────────────────────────────────────────────────────────
 export const authApi = {
     register: (data) => request('POST', '/auth/register', data),

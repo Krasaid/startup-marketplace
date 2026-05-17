@@ -174,7 +174,7 @@ const COLORES = {
   'Hogar':            'linear-gradient(135deg,#0891b2,#22d3ee)',
 }
 const colorPorCategoria = (cat) =>
-  COLORES[cat] || 'linear-gradient(135deg,#788A70,#A9CFA1)'
+  COLORES[cat] || 'var(--color-secondary)'
 </script>
 
 <style scoped>
@@ -185,9 +185,9 @@ const colorPorCategoria = (cat) =>
 }
 .feed-hero h1 {
   font-size: 2rem; font-weight: 800;
-  color: #2A4526; margin-bottom: 0.4rem;
+  color: var(--color-text); margin-bottom: 0.4rem;
 }
-.feed-hero p { color: #888; margin-bottom: 0; }
+.feed-hero p { color: var(--color-muted); margin-bottom: 0; }
 
 
 
@@ -197,10 +197,10 @@ const colorPorCategoria = (cat) =>
   justify-content: space-between;
   margin-bottom: 1rem;
 }
-.resultados-count { font-size: 0.85rem; color: #888; }
+.resultados-count { font-size: 0.85rem; color: var(--color-muted); }
 .limpiar-filtros {
   background: none; border: none;
-  font-size: 0.82rem; color: #788A70;
+  font-size: 0.82rem; color: var(--color-primary);
   cursor: pointer; display: flex;
   align-items: center; gap: 4px;
   font-weight: 500;
@@ -214,16 +214,16 @@ const colorPorCategoria = (cat) =>
   gap: 1.5rem;
 }
 .stand-card {
-  background: #fff; border-radius: 14px;
+  background: var(--color-card); border-radius: 14px;
   overflow: hidden; text-decoration: none;
   color: inherit;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.2);
   transition: transform .2s, box-shadow .2s;
   display: block;
 }
 .stand-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 28px rgba(120,138,112,0.18);
+  box-shadow: 0 10px 28px rgba(0,0,0,0.5);
 }
 
 .card-banner {
@@ -233,18 +233,18 @@ const colorPorCategoria = (cat) =>
 .card-logo {
   position: absolute; bottom: -20px; left: 1rem;
   width: 44px; height: 44px; border-radius: 50%;
-  overflow: hidden; border: 3px solid #fff;
-  background: #788A70;
+  overflow: hidden; border: 3px solid var(--color-card);
+  background: var(--color-deep);
   display: flex; align-items: center; justify-content: center;
 }
 .card-logo img { width: 100%; height: 100%; object-fit: cover; }
-.logo-inicial  { font-size: 1.1rem; font-weight: 700; color: #fff; }
+.logo-inicial  { font-size: 1.1rem; font-weight: 700; color: var(--color-text); }
 
 .card-categoria-badge {
   position: absolute; top: 0.6rem; right: 0.6rem;
   background: rgba(0,0,0,0.45);
   backdrop-filter: blur(4px);
-  color: #fff; font-size: 0.7rem;
+  color: var(--color-text); font-size: 0.7rem;
   font-weight: 600; padding: 3px 8px;
   border-radius: 99px;
   text-transform: uppercase; letter-spacing: .05em;
@@ -252,11 +252,11 @@ const colorPorCategoria = (cat) =>
 
 .card-body    { padding: 1.6rem 1rem 1rem; }
 .card-nombre  { font-size: 1.05rem; font-weight: 700; margin-bottom: 0.3rem; }
-.card-desc    { font-size: 0.85rem; color: #666; line-height: 1.55; }
+.card-desc    { font-size: 0.85rem; color: var(--color-muted); line-height: 1.55; }
 .card-footer  {
   display: flex; justify-content: space-between;
   align-items: center; margin-top: 0.85rem;
-  font-size: 0.8rem; color: #999;
+  font-size: 0.8rem; color: var(--color-muted);
 }
 .card-score   { display: flex; align-items: center; gap: 4px; }
 
@@ -266,17 +266,17 @@ const colorPorCategoria = (cat) =>
   display: flex; flex-direction: column;
   align-items: center; gap: 0.75rem;
 }
-.empty-state i  { font-size: 2.5rem; color: #BDDDBB; }
-.empty-state h3 { font-size: 1.1rem; font-weight: 600; color: #555; }
-.empty-state p  { color: #aaa; font-size: 0.9rem; }
+.empty-state i  { font-size: 2.5rem; color: var(--color-muted); }
+.empty-state h3 { font-size: 1.1rem; font-weight: 600; color: var(--color-text); }
+.empty-state p  { color: var(--color-muted); font-size: 0.9rem; }
 .btn-limpiar {
   margin-top: 0.5rem; padding: 0.6rem 1.5rem;
-  background: #788A70; color: #fff; border: none;
+  background: var(--color-primary); color: var(--color-background); border: none;
   border-radius: 99px; cursor: pointer;
   font-size: 0.875rem; font-weight: 600;
   transition: background .15s;
 }
-.btn-limpiar:hover { background: #2A4526; }
+.btn-limpiar:hover { background: var(--color-accent); }
 
 /* ── PAGINACIÓN ───────────────────────────────────────────────── */
 .paginacion {
@@ -286,13 +286,13 @@ const colorPorCategoria = (cat) =>
 }
 .pag-btn {
   width: 36px; height: 36px;
-  border-radius: 8px; border: 1.5px solid #BDDDBB;
-  background: #fff; cursor: pointer;
+  border-radius: 8px; border: 1.5px solid var(--color-border);
+  background: var(--color-card); cursor: pointer;
   display: flex; align-items: center; justify-content: center;
-  font-size: 0.875rem; color: #555;
+  font-size: 0.875rem; color: var(--color-muted);
   transition: all .15s;
 }
-.pag-btn:hover:not(:disabled) { border-color: #788A70; color: #788A70; }
-.pag-btn.activo { background: #788A70; border-color: #788A70; color: #fff; font-weight: 700; }
+.pag-btn:hover:not(:disabled) { border-color: var(--color-deep); color: var(--color-text); }
+.pag-btn.activo { background: var(--color-deep); border-color: var(--color-deep); color: var(--color-text); font-weight: 700; }
 .pag-btn:disabled { opacity: 0.35; cursor: not-allowed; }
 </style>
