@@ -1,0 +1,18 @@
+# IDEs y Herramientas (Vistas en tu captura)
+.claude/
+.idea/
+.vscode/
+*.iml
+
+# Backend (startup-marketplace)
+startup-marketplace/target/
+startup-marketplace/*.jar
+
+# Frontend (startup-frontend)
+startup-frontend/node_modules/
+startup-frontend/dist/
+startup-frontend/.env.local
+
+# Sistema
+.DS_Store
+
