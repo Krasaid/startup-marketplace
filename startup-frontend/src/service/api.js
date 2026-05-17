@@ -1,4 +1,4 @@
-const BASE_URL = 'http://localhost:8080/api'
+const BASE_URL = 'https://startup-marketplace-production-218f.up.railway.app/api'
 
 // Interceptor central: inyecta JWT en cada request automáticamente
 async function request(method, endpoint, body = null) {
