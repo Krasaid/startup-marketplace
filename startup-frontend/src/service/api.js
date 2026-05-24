@@ -63,7 +63,7 @@ export const uploadApi = {
             throw new Error(error.error || 'Error al subir la imagen')
         }
 
-        return response.json()  // { url: "http://localhost:8080/uploads/uuid.ext" }
+        return response.json()  // { url: "https://startup-marketplace-production-218f.up.railway.app/uploads/uuid.ext" }
     }
 }
 
@@ -96,5 +96,5 @@ export const standsApi = {
     // Este sí va por URL nativa del navegador — el backend retorna 302
     // y el navegador sigue la redirección automáticamente
     getRedirectUrl: (id, platform) =>
-        `http://localhost:8080/api/stands/${id}/redirect/${platform}`
+        `https://startup-marketplace-production-218f.up.railway.app/api/stands/${id}/redirect/${platform}`
 }
