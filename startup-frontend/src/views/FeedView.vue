@@ -182,14 +182,60 @@ const colorPorCategoria = (cat) =>
 .feed-hero {
   text-align: center;
   padding: 1.5rem 1rem 1rem;
+  background: var(--color-forest, #2A4526);
+  border-radius: 16px;
+  margin-bottom: 1rem;
 }
+
 .feed-hero h1 {
-  font-size: 2rem; font-weight: 800;
-  color: var(--color-text); margin-bottom: 0.4rem;
+  font-size: clamp(1.4rem, 5vw, 2rem);
+  font-weight: 800;
+  margin-bottom: 0.4rem;
 }
-.feed-hero p { color: var(--color-muted); margin-bottom: 0; }
 
+.feed-hero p {
+  font-size: clamp(0.8rem, 3vw, 0.95rem);
+  margin-bottom: 1rem;
+}
 
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  max-width: 520px;
+  margin: 0 auto;
+  background: rgba(255,255,255,0.12);
+  border: 1.5px solid rgba(195,218,140,0.3);
+  border-radius: 99px;
+  padding: 0.6rem 1rem;
+}
+
+.search-bar input {
+  flex: 1;
+  min-width: 0;  /* ← clave para móvil */
+  border: none;
+  outline: none;
+  font-size: 0.9rem;
+  background: transparent;
+  color: #fff;
+}
+
+.filtros-bar {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: nowrap;        /* ← scroll horizontal */
+  overflow-x: auto;
+  padding: 0.5rem 0 0.75rem;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;   /* ocultar scrollbar */
+}
+.filtros-bar::-webkit-scrollbar { display: none; }
+
+.filtro-chip {
+  flex-shrink: 0;           /* ← no comprimir chips */
+  white-space: nowrap;
+}
 
 /* ── RESULTADOS HEADER ────────────────────────────────────────── */
 .resultados-header {
@@ -210,8 +256,14 @@ const colorPorCategoria = (cat) =>
 /* ── GRID ─────────────────────────────────────────────────────── */
 .feed-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+@media (max-width: 480px) {
+  .feed-grid {
+    grid-template-columns: 1fr;  /* una columna en móvil pequeño */
+  }
 }
 .stand-card {
   background: var(--color-card); border-radius: 14px;

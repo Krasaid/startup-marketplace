@@ -119,14 +119,16 @@ body {
 .navbar {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  padding: 0 1.5rem;
-  height: 60px;
-  background: var(--color-background);
-  border-bottom: 1px solid var(--color-border);
+  gap: 0.75rem;
+  padding: 0 1rem;
+  height: 56px;
+  background: var(--color-forest, #2A4526);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
   position: sticky;
   top: 0;
   z-index: 100;
+  overflow-x: auto;
+  overflow-y: hidden;
 }
 
 .brand {
@@ -219,7 +221,7 @@ body {
 .nav-link:hover, .router-link-active { color: var(--color-primary); }
 
 .nav-actions { display: flex; align-items: center; gap: 0.6rem; flex-shrink: 0; }
-.nav-email   { font-size: 0.8rem; color: var(--color-muted); white-space: nowrap; }
+.nav-email   { font-size: 0.8rem; color: var(--color-muted); white-space: nowrap; display: none; }
 
 .nav-avatar {
   width: 34px; height: 34px;
@@ -237,4 +239,17 @@ body {
 
 .main-content { flex: 1; padding: 2rem; max-width: 1200px;
                 margin: 0 auto; width: 100%; }
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0 0.75rem;
+    gap: 0.5rem;
+  }
+  .nav-links {
+    gap: 0.75rem;
+  }
+  .main-content {
+    padding: 1rem;
+  }
+}
 </style>
