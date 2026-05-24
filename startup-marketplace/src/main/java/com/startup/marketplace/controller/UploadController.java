@@ -26,8 +26,8 @@ public class UploadController {
     @Value("${startup.upload.dir}")
     private String uploadDir;
 
-    @Value("${server.port:8080}")
-    private String serverPort;
+    @Value("${startup.base-url:http://localhost:8080}")
+    private String baseUrl;
 
     @PostMapping("/upload")
     public ResponseEntity<Map<String, String>> upload(
@@ -53,7 +53,7 @@ public class UploadController {
         String filename = UUID.randomUUID() + "." + extension;
         Files.copy(file.getInputStream(), uploadPath.resolve(filename));
 
-        String url = "http://localhost:" + serverPort + "/uploads/" + filename;
+        String url = baseUrl + "/uploads/" + filename;
         return ResponseEntity.ok(Map.of("url", url));
     }
 
