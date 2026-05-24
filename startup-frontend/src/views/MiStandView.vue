@@ -166,10 +166,10 @@
                                    locale="en-US" class="w-full" />
                     </div>
                     <div class="field">
-                      <label>Imagen URL</label>
-                      <InputText v-model="nuevoProducto.imagenUrl"
-                                 placeholder="https://..."
-                                 class="w-full" />
+                      <label>Imagen del producto</label>
+                      <ImageUploader v-model="nuevoProducto.imagenUrl"
+                                     label="Subir imagen"
+                                     tipo="banner" />
                     </div>
                   </div>
 
@@ -238,8 +238,10 @@
                       </div>
 
                       <div class="field">
-                        <label>Imagen URL</label>
-                        <InputText v-model="productoEditado.imagenUrl" class="w-full" />
+                        <label>Imagen del producto</label>
+                        <ImageUploader v-model="productoEditado.imagenUrl"
+                                       label="Cambiar imagen"
+                                       tipo="banner" />
                       </div>
 
                       <div class="edicion-disponible">
