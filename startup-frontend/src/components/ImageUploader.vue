@@ -78,7 +78,7 @@ async function subirArchivo(file) {
   const token = localStorage.getItem('token')
 
   try {
-    const res = await fetch('http://localhost:8080/api/upload', {
+    const res = await fetch('https://startup-marketplace-production-218f.up.railway.app/api/upload', {
       method: 'POST',
       headers: token ? { 'Authorization': `Bearer ${token}` } : {},
       body: formData
